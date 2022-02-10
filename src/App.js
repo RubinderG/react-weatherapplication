@@ -4,9 +4,13 @@ import "./App.css";
 export default function App() {
   return (
     <div className="App">
-      Weather Application
+      <h1>Weather Application </h1>
       <footer>
-        This project was coded by Rubinder and is {""}
+        This project was coded by{" "}
+        <a href="https://www.linkedin.com/in/rubinder/" target="blank">
+          Rubinder {""}
+        </a>
+        and is {""}
         <a
           href="https://github.com/RubinderG/react-weatherapplication"
           target="blank"
