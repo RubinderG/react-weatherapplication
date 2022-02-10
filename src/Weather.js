@@ -6,16 +6,22 @@ export default function Weather() {
     <div className="Weather">
       <form>
         <div ClassName="row">
-          <div className="col-9">
-            <input
-              type="search"
-              placeholder="Enter a City..."
-              className="form-control"
-            />
-          </div>
-          <div className="col-3">
-            <input type="Submit" value="Search" className="btn-btn-primary" />
-          </div>
+          <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand">LOGO</a>
+              <form class="d-flex">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Enter a city..."
+                  aria-label="Search"
+                />
+                <button class="btn btn-outline-success" type="submit">
+                  Search{" "}
+                </button>
+              </form>
+            </div>
+          </nav>
         </div>
       </form>
       <h1>London</h1>
