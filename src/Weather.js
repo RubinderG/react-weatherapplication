@@ -11,10 +11,11 @@ export default function Weather() {
               <a class="navbar-brand">LOGO</a>
               <form class="d-flex">
                 <input
-                  class="form-control me-2"
+                  class="form-control me-2 w"
                   type="search"
                   placeholder="Enter a city..."
                   aria-label="Search"
+                  autoFocus="on"
                 />
                 <button class="btn btn-outline-success" type="submit">
                   Search{" "}
@@ -35,7 +36,8 @@ export default function Weather() {
             src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
             alt="clear skys"
           />
-          6 °C
+          <span className="temperature">6</span>{" "}
+          <span className="unit">°C</span>
         </div>
         <div className="col-6">
           <ul>
