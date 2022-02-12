@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import FormattedDate from "./FormattedDate";
 import axios from "axios";
 import "./Weather.css";
+import { Oval } from "react-loader-spinner";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -77,6 +78,11 @@ export default function Weather(props) {
     let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 
-    return "Loading...";
+    return (<Oval
+    height="100"
+    width="100"
+    color='grey'
+    ariaLabel='loading'
+  />);
   }
 }
