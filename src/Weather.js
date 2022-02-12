@@ -3,6 +3,7 @@ import WeatherInfo from "./Weatherinfo";
 import axios from "axios";
 import "./Weather.css";
 import { Oval } from "react-loader-spinner";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -59,6 +60,7 @@ if (weatherData.ready) {
           </div>
         </form>
         <WeatherInfo data={weatherData} />
+        <WeatherForecast />
            </div>
     );
   } else {
