@@ -11,6 +11,7 @@ export default function Weather(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
@@ -21,22 +22,22 @@ export default function Weather(props) {
     });
   }
 
-  function search(){
+  function search() {
     const apiKey = "8832bd315702dc1b379e31b5c1440352";
     let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
 
-function handleSubmit(event){
-  event.preventDefault();
- search();
-}
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
 
-function handleCityChange(event){
-setCity(event.target.value);
-}
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
 
-if (weatherData.ready) {
+  if (weatherData.ready) {
     return (
       <div className="Weather">
         <form onSubmit={handleSubmit}>
@@ -60,16 +61,11 @@ if (weatherData.ready) {
           </div>
         </form>
         <WeatherInfo data={weatherData} />
-        <WeatherForecast />
-           </div>
+        <WeatherForecast coordinates={weatherData.coordinates}/>
+      </div>
     );
   } else {
-search();
-    return (<Oval
-    height="100"
-    width="100"
-    color='grey'
-    ariaLabel='loading'
-  />);
+    search();
+    return <Oval height="100" width="100" color="grey" ariaLabel="loading" />;
   }
 }
