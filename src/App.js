@@ -9,13 +9,18 @@ export default function App() {
         <Weather defaultCity="London" />
         <footer>
           This project was coded by{" "}
-          <a href="https://www.linkedin.com/in/rubinder/" target="blank">
+          <a
+            href="https://www.linkedin.com/in/rubinder/"
+            target="blank"
+            rel="noopener noreferrer"
+          >
             Rubinder {""}
           </a>
           and is {""}
           <a
             href="https://github.com/RubinderG/react-weatherapplication"
             target="blank"
+            rel="noopener noreferrer"
           >
             open-sourced on GitHub
           </a>
