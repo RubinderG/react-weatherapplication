@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import WeatherInfo from "./Weatherinfo";
+import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 import "./Weather.css";
 import { Oval } from "react-loader-spinner";
@@ -24,7 +24,7 @@ export default function Weather(props) {
 
   function search() {
     const apiKey = "8832bd315702dc1b379e31b5c1440352";
-    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
 
@@ -55,7 +55,7 @@ export default function Weather(props) {
               <input
                 type="submit"
                 value="Search"
-                className="btn btn-primary w-100"
+                className="btn btn-warning w-100"
               />
             </div>
           </div>
