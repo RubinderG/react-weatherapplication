@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import WeatherInfo from "./Weatherinfo";
 import axios from "axios";
 import "./Weather.css";
+import { Oval } from "react-loader-spinner";
 import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
@@ -65,6 +66,6 @@ export default function Weather(props) {
     );
   } else {
     search();
-    return <div>Loading...</div>;
+    return <Oval height="100" width="100" color="grey" ariaLabel="loading" />;
   }
 }
