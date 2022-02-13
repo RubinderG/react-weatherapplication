@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import WeatherInfo from "./Weatherinfo";
 import axios from "axios";
 import "./Weather.css";
-import { Oval } from "react-loader-spinner";
 import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
@@ -61,11 +60,11 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherInfo data={weatherData} />
-        <WeatherForecast coordinates={weatherData.coordinates}/>
+        <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
     search();
-    return <Oval height="100" width="100" color="grey" ariaLabel="loading" />;
+    return <div>Loading...</div>;
   }
 }
